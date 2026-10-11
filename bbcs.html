@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beauty Blueprint Consulting & Systems</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            DEFAULT: '#0E1726',
+                            dark: '#0A101C',
+                            light: '#182438'
+                        },
+                        gold: {
+                            DEFAULT: '#D4AF37',
+                            light: '#E6C665',
+                            dark: '#AA8828'
+                        },
+                        silk: '#F7F5F0'
+                    },
+                    fontFamily: {
+                        serif: ['Cormorant Garamond', 'serif'],
+                        sans: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0E1726;
+            color: #F7F5F0;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .gold-gradient {
+            background: linear-gradient(135deg, #E6C665 0%, #D4AF37 50%, #AA8828 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-border {
+            border-color: rgba(212, 175, 55, 0.25);
+        }
+        .glass-card {
+            background: rgba(24, 36, 56, 0.5);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-gold selection:text-navy">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass-card border-b border-gold/20 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="#" class="font-serif text-2xl font-bold tracking-wider gold-gradient">
+                BEAUTY BLUEPRINT
+            </a>
+            <div class="hidden md:flex items-center space-x-8 text-xs uppercase tracking-widest text-silk/80">
+                <a href="#problem" class="hover:text-gold transition-colors">Architecture</a>
+                <a href="#ledger" class="hover:text-gold transition-colors">$37 Ledger</a>
+                <a href="#transformation" class="hover:text-gold transition-colors">Services</a>
+            </div>
+            <a href="#audit" class="px-5 py-2.5 text-xs uppercase tracking-widest bg-gold text-navy font-bold rounded hover:bg-gold-light transition-all shadow-lg shadow-gold/10">
+                Request Audit
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen pt-32 pb-20 px-6 flex items-center justify-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(212,175,55,0.08)_0%,_transparent_70%)]"></div>
+        <div class="max-w-4xl mx-auto text-center relative z-10">
+            <span class="text-xs uppercase tracking-[0.3em] text-gold font-semibold mb-6 block">
+                Beauty Blueprint Consulting & Systems
+            </span>
+            <h1 class="font-serif text-4xl md:text-6xl lg:text-7xl font-normal leading-tight mb-8">
+                You opened your suite to master skin and art—<span class="italic font-serif gold-gradient">not to manage software and chase 10 PM DMs.</span>
+            </h1>
+            <p class="text-base md:text-lg text-silk/80 font-light max-w-2xl mx-auto mb-10 leading-relaxed">
+                We align your pricing structure, clear operational friction, and deploy automated backend systems so your practice runs like a high-end luxury studio—with predictable revenue and protected boundaries.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#audit" class="w-full sm:w-auto px-8 py-4 bg-gold text-navy font-bold text-xs uppercase tracking-widest rounded hover:bg-gold-light transition-all shadow-xl shadow-gold/15">
+                    Request a Private Practice Audit →
+                </a>
+                <a href="#ledger" class="w-full sm:w-auto px-8 py-4 border border-gold/40 text-silk hover:border-gold hover:text-gold font-semibold text-xs uppercase tracking-widest rounded transition-all">
+                    Explore $37 Pricing Ledger
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 1: The Bottleneck -->
+    <section id="problem" class="py-24 px-6 border-t border-gold/10 bg-navy-dark/50">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="font-serif text-3xl md:text-5xl font-normal mb-4">The Silent Cost of Running a Suite Alone</h2>
+                <div class="w-16 h-0.5 bg-gold/40 mx-auto"></div>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass-card p-8 rounded-lg">
+                    <h3 class="font-serif text-2xl text-gold mb-3">Pricing Anxiety</h3>
+                    <p class="text-sm text-silk/70 leading-relaxed">
+                        Second-guessing treatment prices and letting uncalculated product/backbar costs quietly erode your true profit margins.
+                    </p>
+                </div>
+                <div class="glass-card p-8 rounded-lg">
+                    <h3 class="font-serif text-2xl text-gold mb-3">Boundary Burnout</h3>
+                    <p class="text-sm text-silk/70 leading-relaxed">
+                        Answering booking DMs at 9 PM and absorbing last-minute cancellations without enforceable deposit policies.
+                    </p>
+                </div>
+                <div class="glass-card p-8 rounded-lg">
+                    <h3 class="font-serif text-2xl text-gold mb-3">Fragmented Tech</h3>
+                    <p class="text-sm text-silk/70 leading-relaxed">
+                        Juggling disconnected booking tools, paper intake forms, and manual payment tracking that slows down client flow.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: $37 Tripwire -->
+    <section id="ledger" class="py-24 px-6 border-t border-gold/10">
+        <div class="max-w-5xl mx-auto glass-card p-10 md:p-16 rounded-xl border border-gold/30">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="text-xs uppercase tracking-widest text-gold font-bold mb-3 block">Digital Entry Asset</span>
+                    <h2 class="font-serif text-3xl md:text-4xl font-normal mb-6">The Treatment Margin & Retail Pricing Ledger</h2>
+                    <p class="text-sm text-silk/80 leading-relaxed mb-6">
+                        Know your exact numbers before you take another client. Input your backbar expenses and disposable supply costs to instantly reveal your true profit per treatment and retail markups.
+                    </p>
+                    <ul class="space-y-3 text-xs text-silk/90 mb-8">
+                        <li class="flex items-center gap-2"><span class="text-gold">✦</span> Instant Profit Visibility per Facial, Peel, & Microneedling</li>
+                        <li class="flex items-center gap-2"><span class="text-gold">✦</span> Keystone Retail Formulas & Markup Multipliers</li>
+                        <li class="flex items-center gap-2"><span class="text-gold">✦</span> Built Specifically for Solo Suite Economics</li>
+                    </ul>
+                    <a href="https://docs.google.com/spreadsheets/d/1jl_tjNrMpORV4zwA0i3zPJhjCigt5bhpHNhlL453ZYA/edit" target="_blank" class="inline-block px-8 py-4 bg-gold text-navy font-bold text-xs uppercase tracking-widest rounded hover:bg-gold-light transition-all">
+                        Get the $37 Pricing Ledger →
+                    </a>
+                </div>
+                <div class="bg-navy p-6 rounded-lg border border-gold/20 font-mono text-xs">
+                    <div class="text-gold font-serif text-lg mb-4 text-center border-b border-gold/20 pb-2">Ledger Preview</div>
+                    <div class="space-y-3 text-silk/70">
+                        <div class="flex justify-between"><span>Custom Facial Price:</span><span class="text-silk">$150.00</span></div>
+                        <div class="flex justify-between"><span>Backbar Cost:</span><span class="text-silk">$18.50</span></div>
+                        <div class="flex justify-between"><span>Disposables Cost:</span><span class="text-silk">$6.00</span></div>
+                        <div class="flex justify-between border-t border-gold/10 pt-2 text-gold font-bold"><span>Net Profit:</span><span>$125.50 (83.7%)</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: High Ticket Offer -->
+    <section id="transformation" class="py-24 px-6 border-t border-gold/10 bg-navy-dark/30">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-16">
+                <span class="text-xs uppercase tracking-widest text-gold font-bold mb-3 block">High-Ticket Consultancy</span>
+                <h2 class="font-serif text-3xl md:text-5xl font-normal">The Practice Architecture Transformation</h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <div class="glass-card p-10 rounded-xl">
+                    <div class="text-3xl font-serif text-gold mb-2">$1,000</div>
+                    <div class="text-xs uppercase tracking-widest text-silk/60 mb-6">Strategic Setup & Implementation</div>
+                    <ul class="space-y-4 text-xs text-silk/80 leading-relaxed">
+                        <li>• Comprehensive Service Menu & Margin Audit</li>
+                        <li>• Full GoHighLevel Backend Booking & Intake Deployment</li>
+                        <li>• Automated Non-Refundable Deposit Gates</li>
+                        <li>• Pre-Treatment Digital Consent & Liability Waivers</li>
+                    </ul>
+                </div>
+                <div class="glass-card p-10 rounded-xl">
+                    <div class="text-3xl font-serif text-gold mb-2">$500 <span class="text-sm font-sans text-silk/60">/ mo</span></div>
+                    <div class="text-xs uppercase tracking-widest text-silk/60 mb-6">Ongoing Practice Management</div>
+                    <ul class="space-y-4 text-xs text-silk/80 leading-relaxed">
+                        <li>• Fractional Operational Management & Tech Support</li>
+                        <li>• Automated Client Re-Engagement & Follow-Up Workflows</li>
+                        <li>• Monthly Practice Revenue & Margin Review</li>
+                        <li>• Continuous System Optimization</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="audit" class="py-20 px-6 border-t border-gold/20 text-center">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="font-serif text-3xl md:text-4xl mb-6">Elevate the Business Behind Your Suite</h2>
+            <p class="text-sm text-silk/70 mb-8 max-w-xl mx-auto">
+                Stop letting operational chaos dictate your income and peace of mind. Request a private practice audit today.
+            </p>
+            <a href="mailto:contact@beautyblueprintcs.com" class="inline-block px-10 py-4 bg-gold text-navy font-bold text-xs uppercase tracking-widest rounded hover:bg-gold-light transition-all shadow-xl shadow-gold/15">
+                Request Private Practice Audit
+            </a>
+            <div class="mt-16 text-xs text-silk/40 uppercase tracking-widest">
+                © 2026 Beauty Blueprint Consulting & Systems. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

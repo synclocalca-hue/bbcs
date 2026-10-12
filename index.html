@@ -76,9 +76,9 @@
                 <a href="#approach" class="hover:text-gold transition-colors">The Approach</a>
                 <a href="#faq" class="hover:text-gold transition-colors">FAQ</a>
             </div>
-            <a href="#call" class="px-5 py-2.5 text-xs uppercase tracking-widest bg-gold text-navy font-bold rounded hover:bg-gold-light transition-all">
+            <button onclick="openBookingModal()" class="px-5 py-2.5 text-xs uppercase tracking-widest bg-gold text-navy font-bold rounded hover:bg-gold-light transition-all">
                 Book a 15-Min Call
-            </a>
+            </button>
         </div>
     </nav>
 
@@ -99,9 +99,9 @@
                 Our consulting helps solo aestheticians work through the challenges holding them back, improve how they run their business, and put the right systems in place to support sustainable growth.
             </p>
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="#call" class="w-full sm:w-auto px-8 py-4 bg-gold text-navy font-bold text-xs uppercase tracking-widest rounded hover:bg-gold-light transition-all shadow-xl shadow-gold/15">
+                <button onclick="openBookingModal()" class="w-full sm:w-auto px-8 py-4 bg-gold text-navy font-bold text-xs uppercase tracking-widest rounded hover:bg-gold-light transition-all shadow-xl shadow-gold/15">
                     BOOK A 15-MINUTE DISCOVERY CALL →
-                </a>
+                </button>
             </div>
         </div>
     </section>
@@ -257,15 +257,15 @@
                 Let's look at where you're struggling, what's keeping you stuck, and what needs to change—both in how you run your business and in the systems supporting it.<br><br>
                 <strong class="text-gold font-serif text-lg">Book a 15-minute discovery call.</strong>
             </p>
-            <a href="YOUR_CALENDLY_OR_GHL_BOOKING_LINK_HERE" class="inline-block px-10 py-4 bg-gold text-navy font-bold text-xs uppercase tracking-widest rounded hover:bg-gold-light transition-all shadow-xl shadow-gold/15">
+            <button onclick="openBookingModal()" class="inline-block px-10 py-4 bg-gold text-navy font-bold text-xs uppercase tracking-widest rounded hover:bg-gold-light transition-all shadow-xl shadow-gold/15">
                 BOOK YOUR CALL →
-            </a>
+            </button>
         </div>
     </section>
 
-    <!-- Multi-Column Luxury Footer -->
+    <!-- Streamlined Luxury Footer -->
     <footer class="bg-navy-dark pt-16 pb-12 px-6 border-t border-gold/20 text-silk/70 text-xs">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-10 mb-12">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
             
             <div class="md:col-span-2">
                 <a href="#" class="font-serif text-2xl font-bold tracking-wider gold-gradient mb-4 block">
@@ -282,28 +282,8 @@
                     <li><a href="#problem" class="hover:text-gold transition-colors">The Problem</a></li>
                     <li><a href="#approach" class="hover:text-gold transition-colors">The Approach</a></li>
                     <li><a href="#faq" class="hover:text-gold transition-colors">FAQ</a></li>
-                    <li><a href="#call" class="hover:text-gold transition-colors">Book a Call</a></li>
+                    <li><button onclick="openBookingModal()" class="hover:text-gold transition-colors text-left">Book a Call</button></li>
                 </ul>
-            </div>
-
-            <div>
-                <h4 class="font-serif text-gold font-semibold uppercase tracking-widest mb-4">Digital Assets</h4>
-                <ul class="space-y-2">
-                    <li><a href="https://docs.google.com/spreadsheets/d/1jl_tjNrMpORV4zwA0i3zPJhjCigt5bhpHNhlL453ZYA/edit" target="_blank" class="hover:text-gold transition-colors">Pricing Ledger</a></li>
-                    <li><a href="https://docs.google.com/spreadsheets/d/1GDFlQS43wp42UI_yyqV98m9H8JE-3z02_lj4vdr_x1M/edit" target="_blank" class="hover:text-gold transition-colors">Revenue Tracker</a></li>
-                </ul>
-            </div>
-
-            <div>
-                <h4 class="font-serif text-gold font-semibold uppercase tracking-widest mb-4">Connect</h4>
-                <div class="flex space-x-4">
-                    <a href="#" class="w-8 h-8 rounded bg-navy-light border border-gold/20 flex items-center justify-center hover:border-gold text-gold transition-colors">
-                        IG
-                    </a>
-                    <a href="#" class="w-8 h-8 rounded bg-navy-light border border-gold/20 flex items-center justify-center hover:border-gold text-gold transition-colors">
-                        TH
-                    </a>
-                </div>
             </div>
 
         </div>
@@ -319,8 +299,24 @@
         </div>
     </footer>
 
-    <!-- FAQ Accordion Script -->
+    <!-- Google Calendar Booking Pop-up Modal -->
+    <div id="bookingModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm hidden">
+        <div class="glass-card w-full max-w-3xl rounded-2xl overflow-hidden border border-gold/30 shadow-2xl relative flex flex-col h-[85vh]">
+            <!-- Modal Header -->
+            <div class="p-4 border-b border-gold/20 flex justify-between items-center bg-navy-dark">
+                <h3 class="font-serif text-lg text-gold font-semibold">Select a Time for Your Discovery Call</h3>
+                <button onclick="closeBookingModal()" class="text-silk/60 hover:text-gold text-2xl font-bold px-2">&times;</button>
+            </div>
+            <!-- Modal Body / Frame -->
+            <div class="flex-grow w-full bg-white">
+                <iframe id="calendarIframe" src="https://calendar.app.google/WaXo1SNbZ5hMneeh9" class="w-full h-full border-0"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
     <script>
+        // FAQ Accordion Toggle
         document.querySelectorAll('.faq-item').forEach(item => {
             item.addEventListener('click', () => {
                 const isActive = item.classList.contains('active');
@@ -330,6 +326,14 @@
                 }
             });
         });
+
+        // Modal Functions
+        function openBookingModal() {
+            document.getElementById('bookingModal').classList.remove('hidden');
+        }
+        function closeBookingModal() {
+            document.getElementById('bookingModal').classList.add('hidden');
+        }
     </script>
 
 </body>

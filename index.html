@@ -219,4 +219,286 @@
                             <h3 class="font-serif text-lg text-silk font-semibold">How does the consulting and management work together?</h3>
                             <span class="faq-icon text-gold text-2xl font-bold transition-transform duration-300">+</span>
                         </div>
-                        <div class="faq-answer text-xs text-silk/70 leading
+                        <div class="faq-answer text-xs text-silk/70 leading-relaxed">
+                            We start with deep mindset alignment and business restructuring to resolve pricing guilt and boundary issues, then set up and manage your operational systems every month so you never have to handle it yourself.
+                        </div>
+                    </div>
+
+                    <div class="faq-item glass-card p-6 rounded-xl border border-gold/20 cursor-pointer">
+                        <div class="flex justify-between items-center">
+                            <h3 class="font-serif text-lg text-silk font-semibold">Do I have to manage the systems myself once they are set up?</h3>
+                            <span class="faq-icon text-gold text-2xl font-bold transition-transform duration-300">+</span>
+                        </div>
+                        <div class="faq-answer text-xs text-silk/70 leading-relaxed">
+                            No. Our ongoing management service means we take care of the operational tasks for you monthly so you can stay entirely focused on treating your clients.
+                        </div>
+                    </div>
+
+                    <div class="faq-item glass-card p-6 rounded-xl border border-gold/20 cursor-pointer">
+                        <div class="flex justify-between items-center">
+                            <h3 class="font-serif text-lg text-silk font-semibold">What is included in the 15-minute discovery call?</h3>
+                            <span class="faq-icon text-gold text-2xl font-bold transition-transform duration-300">+</span>
+                        </div>
+                        <div class="faq-answer text-xs text-silk/70 leading-relaxed">
+                            We look at where you're feeling stuck, review your current pricing and boundary challenges, and see if our consulting and system management are the right fit for your business.
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final Call to Action -->
+    <section id="call" class="py-24 px-6 border-t border-gold/20 text-center bg-navy-dark/60">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="font-serif text-3xl md:text-4xl mb-6">You don't have to choose between growing your business and having a life outside of it.</h2>
+            <p class="text-sm text-silk/80 mb-8 max-w-xl mx-auto leading-relaxed">
+                Let's look at where you're struggling, what's keeping you stuck, and what needs to change—both in how you run your business and in the systems supporting it.<br><br>
+                <strong class="text-gold font-serif text-lg">Book a 15-minute discovery call.</strong>
+            </p>
+            <button onclick="openBookingModal()" class="inline-block px-10 py-4 bg-gold text-navy font-bold text-xs uppercase tracking-widest rounded hover:bg-gold-light transition-all shadow-xl shadow-gold/15">
+                BOOK A 15-MINUTE DISCOVERY CALL →
+            </button>
+        </div>
+    </section>
+
+    <!-- Streamlined Luxury Footer -->
+    <footer class="bg-navy-dark pt-16 pb-12 px-6 border-t border-gold/20 text-silk/70 text-xs">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
+            
+            <div class="md:col-span-2">
+                <a href="#" class="font-serif text-2xl font-bold tracking-wider gold-gradient mb-4 block">
+                    BEAUTY BLUEPRINT
+                </a>
+                <p class="text-silk/60 text-xs leading-relaxed max-w-sm mb-6">
+                    Consulting & systems for solo aestheticians. Aligning owner mindset, operational flow, and sustainable profit.
+                </p>
+            </div>
+
+            <div>
+                <h4 class="font-serif text-gold font-semibold uppercase tracking-widest mb-4">Navigation</h4>
+                <ul class="space-y-2">
+                    <li><a href="#problem" class="hover:text-gold transition-colors">The Problem</a></li>
+                    <li><a href="#approach" class="hover:text-gold transition-colors">The Approach</a></li>
+                    <li><a href="#faq" class="hover:text-gold transition-colors">FAQ</a></li>
+                    <li><button onclick="openBookingModal()" class="hover:text-gold transition-colors text-left">Book 15-Minute Discovery Call</button></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="max-w-7xl mx-auto border-t border-gold/10 pt-8 flex flex-col md:flex-row justify-between items-center text-silk/40 text-xs">
+            <div>
+                © 2026 Beauty Blueprint Consulting & Systems. All rights reserved.
+            </div>
+            <div class="flex space-x-6 mt-4 md:mt-0">
+                <a href="#" class="hover:text-gold transition-colors">Privacy Policy</a>
+                <a href="#" class="hover:text-gold transition-colors">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Native Luxury Custom Calendar Modal -->
+    <div id="bookingModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md hidden">
+        <div class="glass-card w-full max-w-2xl rounded-2xl overflow-hidden border border-gold/30 shadow-2xl relative flex flex-col max-h-[90vh]">
+            
+            <!-- Modal Header -->
+            <div class="p-5 border-b border-gold/20 flex justify-between items-center bg-navy-dark">
+                <div>
+                    <h3 class="font-serif text-xl text-gold font-bold">15-Minute Discovery Call</h3>
+                    <p class="text-xs text-silk/60">Select an available date and time slot below (4:00 PM – 7:00 PM)</p>
+                </div>
+                <button onclick="closeBookingModal()" class="text-silk/60 hover:text-gold text-2xl font-bold px-2">&times;</button>
+            </div>
+
+            <!-- Modal Content Area -->
+            <div class="p-6 overflow-y-auto space-y-6">
+                
+                <!-- Step 1: Date & Time Picker -->
+                <div id="bookingStep1">
+                    <label class="block text-xs uppercase tracking-widest text-gold font-semibold mb-2">1. Select a Date</label>
+                    <input type="date" id="bookingDate" onchange="loadAvailableSlots()" class="w-full p-3 rounded bg-navy-light border border-gold/30 text-silk text-sm focus:outline-none focus:border-gold mb-6">
+
+                    <label class="block text-xs uppercase tracking-widest text-gold font-semibold mb-2">2. Select a 15-Minute Time Slot</label>
+                    <div id="timeSlotsContainer" class="grid grid-cols-3 gap-3">
+                        <!-- Slots dynamically loaded via JS -->
+                        <div class="col-span-3 text-center text-xs text-silk/40 italic py-4">Please select a date above to view available 4 PM – 7 PM time slots.</div>
+                    </div>
+                </div>
+
+                <!-- Step 2: Client Info Form -->
+                <form id="bookingForm" onsubmit="submitCustomBooking(event)" class="hidden space-y-4 pt-4 border-t border-gold/20">
+                    <div class="p-3 bg-gold/10 rounded border border-gold/20 text-xs text-gold flex justify-between items-center">
+                        <span>Selected Time: <strong id="summaryDateTime"></strong></span>
+                        <button type="button" onclick="resetStep1()" class="underline text-silk hover:text-gold">Change</button>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs uppercase tracking-widest text-silk/70 mb-1">Your Full Name *</label>
+                            <input type="text" id="clientName" required class="w-full p-3 rounded bg-navy-light border border-gold/30 text-silk text-sm focus:outline-none focus:border-gold">
+                        </div>
+                        <div>
+                            <label class="block text-xs uppercase tracking-widest text-silk/70 mb-1">Email Address *</label>
+                            <input type="email" id="clientEmail" required class="w-full p-3 rounded bg-navy-light border border-gold/30 text-silk text-sm focus:outline-none focus:border-gold">
+                        </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs uppercase tracking-widest text-silk/70 mb-1">Phone Number *</label>
+                            <input type="tel" id="clientPhone" required class="w-full p-3 rounded bg-navy-light border border-gold/30 text-silk text-sm focus:outline-none focus:border-gold">
+                        </div>
+                        <div>
+                            <label class="block text-xs uppercase tracking-widest text-silk/70 mb-1">Business / Studio Name</label>
+                            <input type="text" id="clientBusiness" class="w-full p-3 rounded bg-navy-light border border-gold/30 text-silk text-sm focus:outline-none focus:border-gold">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs uppercase tracking-widest text-silk/70 mb-1">What is your biggest operational challenge right now?</label>
+                        <textarea id="clientChallenge" rows="3" class="w-full p-3 rounded bg-navy-light border border-gold/30 text-silk text-sm focus:outline-none focus:border-gold" placeholder="e.g. pricing guilt, last-minute cancellations, managing intake forms..."></textarea>
+                    </div>
+
+                    <button type="submit" id="submitBtn" class="w-full py-4 bg-gold text-navy font-bold text-xs uppercase tracking-widest rounded hover:bg-gold-light transition-all shadow-xl shadow-gold/15 mt-4">
+                        CONFIRM DISCOVERY CALL →
+                    </button>
+                </form>
+
+                <!-- Step 3: Success Confirmation Screen -->
+                <div id="bookingSuccess" class="hidden text-center py-10 space-y-4">
+                    <div class="w-16 h-16 bg-gold/20 border border-gold text-gold rounded-full flex items-center justify-center mx-auto text-2xl font-bold">✓</div>
+                    <h4 class="font-serif text-2xl text-gold">Your Discovery Call is Confirmed!</h4>
+                    <p class="text-xs text-silk/80 max-w-md mx-auto leading-relaxed">
+                        Thank you for booking. We have received your details and will follow up shortly with your meeting confirmation.
+                    </p>
+                    <button onclick="closeBookingModal()" class="px-6 py-2.5 bg-navy-light border border-gold/30 text-gold text-xs uppercase tracking-widest rounded hover:bg-gold hover:text-navy transition-all">
+                        Close Window
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // Set minimum date to today
+        document.getElementById('bookingDate').min = new Date().toISOString().split('T')[0];
+
+        // 15-minute call slots with 15-minute buffer built in (4:00 PM - 7:00 PM)
+        const availableSlots = [
+            "4:00 PM",
+            "4:30 PM",
+            "5:00 PM",
+            "5:30 PM",
+            "6:00 PM",
+            "6:30 PM"
+        ];
+
+        let selectedDateStr = "";
+        let selectedTimeSlot = "";
+
+        // Load 4 PM - 7 PM Slots when date changes
+        function loadAvailableSlots() {
+            const dateInput = document.getElementById('bookingDate').value;
+            const container = document.getElementById('timeSlotsContainer');
+            if (!dateInput) return;
+
+            selectedDateStr = dateInput;
+            container.innerHTML = "";
+
+            availableSlots.forEach(slot => {
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.className = "p-3 text-xs border border-gold/30 rounded text-silk hover:border-gold hover:bg-gold/10 transition-all font-semibold";
+                btn.innerText = slot;
+                btn.onclick = () => selectSlot(slot, btn);
+                container.appendChild(btn);
+            });
+        }
+
+        // Handle Slot Selection
+        function selectSlot(slot, element) {
+            selectedTimeSlot = slot;
+            document.querySelectorAll('#timeSlotsContainer button').forEach(b => {
+                b.classList.remove('bg-gold', 'text-navy', 'border-gold');
+                b.classList.add('text-silk');
+            });
+            element.classList.add('bg-gold', 'text-navy', 'border-gold');
+            element.classList.remove('text-silk');
+
+            // Show form
+            document.getElementById('summaryDateTime').innerText = `${selectedDateStr} at ${selectedTimeSlot}`;
+            document.getElementById('bookingForm').classList.remove('hidden');
+        }
+
+        function resetStep1() {
+            document.getElementById('bookingForm').classList.add('hidden');
+        }
+
+        // Submit Booking Details via Web3Forms using your key
+        async function submitCustomBooking(event) {
+            event.preventDefault();
+
+            const submitBtn = document.getElementById('submitBtn');
+            submitBtn.innerText = "SENDING...";
+            submitBtn.disabled = true;
+
+            const payload = {
+                access_key: "5b5f6680-5eaf-4b63-9f1c-b53671407700",
+                subject: `New Discovery Call Booked: ${selectedDateStr} @ ${selectedTimeSlot}`,
+                name: document.getElementById('clientName').value,
+                email: document.getElementById('clientEmail').value,
+                phone: document.getElementById('clientPhone').value,
+                business: document.getElementById('clientBusiness').value,
+                challenge: document.getElementById('clientChallenge').value,
+                booking_date: selectedDateStr,
+                booking_time: selectedTimeSlot
+            };
+
+            try {
+                const res = await fetch("https://api.web3forms.com/submit", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json", "Accept": "application/json" },
+                    body: JSON.stringify(payload)
+                });
+
+                if (res.ok) {
+                    document.getElementById('bookingStep1').classList.add('hidden');
+                    document.getElementById('bookingForm').classList.add('hidden');
+                    document.getElementById('bookingSuccess').classList.remove('hidden');
+                } else {
+                    alert("Submission failed. Please check your details and try again.");
+                }
+            } catch (e) {
+                alert("Connection error. Please try again.");
+            } finally {
+                submitBtn.innerText = "CONFIRM DISCOVERY CALL →";
+                submitBtn.disabled = false;
+            }
+        }
+
+        // FAQ Accordion Toggle
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                document.querySelectorAll('.faq-item').forEach(el => el.classList.remove('active'));
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // Modal Controls
+        function openBookingModal() {
+            document.getElementById('bookingModal').classList.remove('hidden');
+        }
+        function closeBookingModal() {
+            document.getElementById('bookingModal').classList.add('hidden');
+        }
+    </script>
+
+</body>
+</html>

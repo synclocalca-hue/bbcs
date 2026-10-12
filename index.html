@@ -293,8 +293,8 @@
                 © 2026 Beauty Blueprint Consulting & Systems. All rights reserved.
             </div>
             <div class="flex space-x-6 mt-4 md:mt-0">
-                <a href="#" class="hover:text-gold transition-colors">Privacy Policy</a>
-                <a href="#" class="hover:text-gold transition-colors">Terms of Service</a>
+                <button onclick="openPrivacyModal()" class="hover:text-gold transition-colors">Privacy Policy</button>
+                <button onclick="openTermsModal()" class="hover:text-gold transition-colors">Terms of Service</button>
             </div>
         </div>
     </footer>
@@ -303,7 +303,6 @@
     <div id="bookingModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md hidden">
         <div class="glass-card w-full max-w-2xl rounded-2xl overflow-hidden border border-gold/30 shadow-2xl relative flex flex-col max-h-[90vh]">
             
-            <!-- Modal Header -->
             <div class="p-5 border-b border-gold/20 flex justify-between items-center bg-navy-dark">
                 <div>
                     <h3 class="font-serif text-xl text-gold font-bold">15-Minute Discovery Call</h3>
@@ -312,22 +311,17 @@
                 <button onclick="closeBookingModal()" class="text-silk/60 hover:text-gold text-2xl font-bold px-2">&times;</button>
             </div>
 
-            <!-- Modal Content Area -->
             <div class="p-6 overflow-y-auto space-y-6">
-                
-                <!-- Step 1: Date & Time Picker -->
                 <div id="bookingStep1">
                     <label class="block text-xs uppercase tracking-widest text-gold font-semibold mb-2">1. Select a Date</label>
                     <input type="date" id="bookingDate" onchange="loadAvailableSlots()" class="w-full p-3 rounded bg-navy-light border border-gold/30 text-silk text-sm focus:outline-none focus:border-gold mb-6">
 
                     <label class="block text-xs uppercase tracking-widest text-gold font-semibold mb-2">2. Select a 15-Minute Time Slot</label>
                     <div id="timeSlotsContainer" class="grid grid-cols-3 gap-3">
-                        <!-- Slots dynamically loaded via JS -->
                         <div class="col-span-3 text-center text-xs text-silk/40 italic py-4">Please select a date above to view available 4 PM – 7 PM time slots.</div>
                     </div>
                 </div>
 
-                <!-- Step 2: Client Info Form -->
                 <form id="bookingForm" onsubmit="submitCustomBooking(event)" class="hidden space-y-4 pt-4 border-t border-gold/20">
                     <div class="p-3 bg-gold/10 rounded border border-gold/20 text-xs text-gold flex justify-between items-center">
                         <span>Selected Time: <strong id="summaryDateTime"></strong></span>
@@ -366,7 +360,6 @@
                     </button>
                 </form>
 
-                <!-- Step 3: Success Confirmation Screen -->
                 <div id="bookingSuccess" class="hidden text-center py-10 space-y-4">
                     <div class="w-16 h-16 bg-gold/20 border border-gold text-gold rounded-full flex items-center justify-center mx-auto text-2xl font-bold">✓</div>
                     <h4 class="font-serif text-2xl text-gold">Your Discovery Call is Confirmed!</h4>
@@ -377,17 +370,72 @@
                         Close Window
                     </button>
                 </div>
+            </div>
+        </div>
+    </div>
 
+    <!-- Privacy Policy Modal -->
+    <div id="privacyModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md hidden">
+        <div class="glass-card w-full max-w-2xl rounded-2xl overflow-hidden border border-gold/30 shadow-2xl relative flex flex-col max-h-[85vh]">
+            <div class="p-5 border-b border-gold/20 flex justify-between items-center bg-navy-dark">
+                <h3 class="font-serif text-xl text-gold font-bold">Privacy Policy</h3>
+                <button onclick="closePrivacyModal()" class="text-silk/60 hover:text-gold text-2xl font-bold px-2">&times;</button>
+            </div>
+            <div class="p-6 overflow-y-auto space-y-4 text-xs text-silk/80 leading-relaxed">
+                <p class="font-semibold text-silk">Effective Date: October 2026</p>
+                <p>At Beauty Blueprint Consulting & Systems, we respect your privacy and are committed to protecting the personal information you share with us when requesting discovery calls or utilizing our consulting services.</p>
+
+                <h4 class="font-serif text-sm text-gold font-bold mt-3">1. Information We Collect</h4>
+                <p>We collect information you voluntarily provide through our call scheduling forms, including your full name, email address, phone number, business or studio name, and descriptions of your business challenges.</p>
+
+                <h4 class="font-serif text-sm text-gold font-bold mt-3">2. How We Use Your Information</h4>
+                <p>Your information is used strictly to coordinate 15-minute discovery calls, evaluate your business goals, and provide tailored consulting and operational support. We do not sell, rent, or trade your contact information to third parties.</p>
+
+                <h4 class="font-serif text-sm text-gold font-bold mt-3">3. Data Security</h4>
+                <p>We implement standard security measures to ensure your submissions remain private. Form processing is secured through encrypted API transmission.</p>
+
+                <h4 class="font-serif text-sm text-gold font-bold mt-3">4. Your Rights</h4>
+                <p>You may request to view, update, or delete your personal information from our consultation records at any time by contacting us directly.</p>
+            </div>
+            <div class="p-4 border-t border-gold/20 text-right bg-navy-dark">
+                <button onclick="closePrivacyModal()" class="px-5 py-2 bg-gold text-navy font-bold text-xs uppercase tracking-widest rounded hover:bg-gold-light">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Terms of Service Modal -->
+    <div id="termsModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md hidden">
+        <div class="glass-card w-full max-w-2xl rounded-2xl overflow-hidden border border-gold/30 shadow-2xl relative flex flex-col max-h-[85vh]">
+            <div class="p-5 border-b border-gold/20 flex justify-between items-center bg-navy-dark">
+                <h3 class="font-serif text-xl text-gold font-bold">Terms of Service</h3>
+                <button onclick="closeTermsModal()" class="text-silk/60 hover:text-gold text-2xl font-bold px-2">&times;</button>
+            </div>
+            <div class="p-6 overflow-y-auto space-y-4 text-xs text-silk/80 leading-relaxed">
+                <p class="font-semibold text-silk">Effective Date: October 2026</p>
+                <p>By scheduling a 15-minute discovery call or engaging with Beauty Blueprint Consulting & Systems, you agree to the following terms and guidelines.</p>
+
+                <h4 class="font-serif text-sm text-gold font-bold mt-3">1. Consulting Engagements</h4>
+                <p>Initial discovery calls are 15-minute introductory sessions designed to assess business alignment. Professional advisory services and system implementations are subject to formal agreement prior to project initiation.</p>
+
+                <h4 class="font-serif text-sm text-gold font-bold mt-3">2. Scheduling & Attendance</h4>
+                <p>We request at least 24 hours' notice if you need to reschedule or cancel a booked discovery call. Repeated missed calls without notice may limit future availability.</p>
+
+                <h4 class="font-serif text-sm text-gold font-bold mt-3">3. Intellectual Property</h4>
+                <p>All framework documentation, methodology designs, and operational processes discussed or provided remain the proprietary intellectual property of Beauty Blueprint Consulting & Systems.</p>
+
+                <h4 class="font-serif text-sm text-gold font-bold mt-3">4. Disclaimers</h4>
+                <p>Consulting outcomes depend on mutual execution, boundary enforcement, and business participation. Past results do not guarantee specific monetary gains without implementation effort.</p>
+            </div>
+            <div class="p-4 border-t border-gold/20 text-right bg-navy-dark">
+                <button onclick="closeTermsModal()" class="px-5 py-2 bg-gold text-navy font-bold text-xs uppercase tracking-widest rounded hover:bg-gold-light">Close</button>
             </div>
         </div>
     </div>
 
     <!-- Scripts -->
     <script>
-        // Set minimum date to today
         document.getElementById('bookingDate').min = new Date().toISOString().split('T')[0];
 
-        // 15-minute call slots with 15-minute buffer built in (4:00 PM - 7:00 PM)
         const availableSlots = [
             "4:00 PM",
             "4:30 PM",
@@ -400,7 +448,6 @@
         let selectedDateStr = "";
         let selectedTimeSlot = "";
 
-        // Load 4 PM - 7 PM Slots when date changes
         function loadAvailableSlots() {
             const dateInput = document.getElementById('bookingDate').value;
             const container = document.getElementById('timeSlotsContainer');
@@ -419,7 +466,6 @@
             });
         }
 
-        // Handle Slot Selection
         function selectSlot(slot, element) {
             selectedTimeSlot = slot;
             document.querySelectorAll('#timeSlotsContainer button').forEach(b => {
@@ -429,7 +475,6 @@
             element.classList.add('bg-gold', 'text-navy', 'border-gold');
             element.classList.remove('text-silk');
 
-            // Show form
             document.getElementById('summaryDateTime').innerText = `${selectedDateStr} at ${selectedTimeSlot}`;
             document.getElementById('bookingForm').classList.remove('hidden');
         }
@@ -438,7 +483,6 @@
             document.getElementById('bookingForm').classList.add('hidden');
         }
 
-        // Submit Booking Details via Web3Forms using your key
         async function submitCustomBooking(event) {
             event.preventDefault();
 
@@ -480,7 +524,6 @@
             }
         }
 
-        // FAQ Accordion Toggle
         document.querySelectorAll('.faq-item').forEach(item => {
             item.addEventListener('click', () => {
                 const isActive = item.classList.contains('active');
@@ -491,12 +534,26 @@
             });
         });
 
-        // Modal Controls
+        // Booking Modal Controls
         function openBookingModal() {
             document.getElementById('bookingModal').classList.remove('hidden');
         }
         function closeBookingModal() {
             document.getElementById('bookingModal').classList.add('hidden');
+        }
+
+        // Legal Modal Controls
+        function openPrivacyModal() {
+            document.getElementById('privacyModal').classList.remove('hidden');
+        }
+        function closePrivacyModal() {
+            document.getElementById('privacyModal').classList.add('hidden');
+        }
+        function openTermsModal() {
+            document.getElementById('termsModal').classList.remove('hidden');
+        }
+        function closeTermsModal() {
+            document.getElementById('termsModal').classList.add('hidden');
         }
     </script>
 
